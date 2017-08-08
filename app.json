@@ -1,0 +1,29 @@
+{
+  "build": {
+    "target": "../priv/static/build",
+    "publicPath": "build/bridge",
+    "asset": "./bridge/",
+    "sub": ""
+  },
+  "dev": {
+    "port": 8080,
+    "proxy": "http://120.24.253.124",
+    "autoOpenBrowser": false
+  },
+  "module": {
+    "team-master": {
+      "enable": true,
+      "path": "./src/pages/team-master",
+      "page": "team-master"
+    },
+    "chat": {
+      "enable": false,
+      "path": "./src/pages/chat",
+      "page": "chat"
+    },
+    "admin": {
+      "enable": false,
+      "pages": []
+    }
+  }
+}
