@@ -1,5 +1,34 @@
+const fs = require('fs');
+const app = require('../../app.json').module;
+
+
+app['index'] = {
+  enable: true,
+  page: 'index',
+  path: './'
+};
+
+const fileTemplate = function (data) {
+  return `<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Project</title>
+  </head>
+    <body>
+        <div id="app" style="padding:16px">
+        <h1 style="color: #f00">This file is created by Node.js </h1>
+        <h1 style="color: #f00">DO NOT place your codes here</h1>
+        Working Modules :<br> ${data}
+        </div>
+    </body>
+    </html>`
+};
+fs.writeFile('index.js', "console.warn('DO NOT code in this file')");
+fs.writeFile('index.html', fileTemplate(JSON.stringify(getEntry())));
+
+
 function getEntry() {
-  const app = require('../../app.json').module;
   let entries = {};
   for (let key in app) {
     if (app[key]['enable']) {
