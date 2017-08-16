@@ -4,17 +4,11 @@ const app = require('../../app.json');
 const build = app.build, dev = app.dev;
 const load = require('./loader');
 const entry = load.getEntry();
-const chalk = require('chalk');
-const env = process.env.NODE_ENV ;
+let env = process.env.NODE_ENV;
 
-console.log(chalk.yellow('  ----------------\n'));
-console.log(chalk.yellow('  ' + env + ' config file path:'));
-console.log(chalk.yellow('  ' + __dirname) + '\n');
-console.log(chalk.yellow('  ' + env + ' config file name:'));
-console.log(chalk.yellow('  build/config/index.js\n'));
-console.log(chalk.yellow('  Working Modules:'));
-console.log(chalk.yellow('  ' + JSON.stringify(entry) + '\n'));
-console.log(chalk.yellow('  ----------------'));
+if (!env) {
+  env = 'development'
+}
 
 
 module.exports = {
@@ -30,7 +24,7 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: dev.port,
+    port: dev.port ? dev.port : 8080,
     autoOpenBrowser: dev.autoOpenBrowser,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
