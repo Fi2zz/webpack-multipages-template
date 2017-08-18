@@ -19,6 +19,7 @@
     port                  devSever的端口
     proxy                 devServer proxy table的url
     autoOpenBrowser       自动打开浏览器
+    autoCompile           自动打包
     
  ` module `  
     
