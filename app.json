@@ -1,16 +1,17 @@
 {
   "build": {
-    "target": "your/built/bundle/path",
+    "target": "../test/static/build",
     "publicPath": "/build/",
     "asset": "./",
     "sub": "",
-    "html-template-path": "your/build/template/file/path",
+    "html-template-path": "../test/template",
     "inject": false
   },
   "dev": {
     "port": 8081,
     "proxy": "http://120.24.253.124",
-    "autoOpenBrowser": false
+    "autoOpenBrowser": false,
+    "autoCompile": false
   },
   "module": {
     "home": {

@@ -16,7 +16,6 @@ let proxyTable = dev.proxy !== false ? {
     }
 } : {};
 
-console.log(proxyTable)
 
 module.exports = {
     entry: entry,
@@ -36,6 +35,7 @@ module.exports = {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         proxyTable: proxyTable,
-        cssSourceMap: false
+        cssSourceMap: false,
+        autoCompile: 'autoCompile' in dev ? dev.autoCompile : false
     }
-}
+};
