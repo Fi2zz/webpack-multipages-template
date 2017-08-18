@@ -58,6 +58,7 @@ let plugins = [
 
 plugins = config.template(plugins);
 
+// console.log(plugins)
 
 module.exports = merge(baseWebpackConfig, {
   module: {

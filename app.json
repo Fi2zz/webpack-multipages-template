@@ -1,29 +1,35 @@
 {
   "build": {
-    "target": "../priv/static/build",
-    "publicPath": "build/bridge",
-    "asset": "./bridge/",
-    "sub": ""
+    "target": "your/built/bundle/path",
+    "publicPath": "/build/",
+    "asset": "./",
+    "sub": "",
+    "html-template-path": "your/build/template/file/path",
+    "inject": false
   },
   "dev": {
-    "port": 8080,
+    "port": 8081,
     "proxy": "http://120.24.253.124",
     "autoOpenBrowser": false
   },
   "module": {
-    "team-master": {
+    "home": {
       "enable": true,
-      "path": "./src/pages/team-master",
-      "page": "team-master"
+      "path": "./src/pages/home/",
+      "page": "home"
     },
-    "chat": {
+    "pageName01": {
       "enable": false,
-      "path": "./src/pages/chat",
-      "page": "chat"
+      "path": "entry/file/path",
+      "page": "pageName"
     },
-    "admin": {
+    "pageName02": {
       "enable": false,
-      "pages": []
+      "path": "entry/file/path",
+      "pages": [
+        "pageName01",
+        "pageName02"
+      ]
     }
   }
 }
