@@ -1,4 +1,10 @@
+
 # app.json 
+
+本模板基于Vue webpack-template 
+
+项目根目录下不要建 index.html和index.js。这两个文件将由Node.js自动生成
+
 
 
 
@@ -29,4 +35,4 @@
       page/pages          模块页面名称
       
 
-项目根目录下不要建 index.html和index.js。这两个文件将由Node.js自动生成
+
