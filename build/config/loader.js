@@ -5,10 +5,10 @@ const utils = require('util');
 const devPort = project.dev.port ? project.dev.port : 8080;
 const chalk = require('chalk');
 const entry = getEntry();
+
+
 let env = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
-
 if (env === 'development') {
-
     app['index'] = {
         enable: true,
         page: 'index',
@@ -17,12 +17,12 @@ if (env === 'development') {
 }
 
 function fileTemplate(data) {
-    console.log(chalk.yellow(`  [${env}]----------------`));
-    console.log(chalk.yellow(`  [${env}] ${env.toUpperCase()} config file path`));
-    console.log(chalk.yellow(`  [${env}]` + __dirname));
-    console.log(chalk.yellow(`  [${env}]Working Modules:`));
-    console.log(chalk.yellow(`  [${env}]${utils.inspect(data)}`));
-    console.log(chalk.yellow(`  [${env}]----------------\n`));
+    console.log(chalk.yellow(`  [${env}]    ----------------`));
+    console.log(chalk.yellow(`  [${env}]    ${env.toUpperCase()} config file path`));
+    console.log(chalk.yellow(`  [${env}]    ` + __dirname));
+    console.log(chalk.yellow(`  [${env}]    Working Modules:`));
+    console.log(chalk.yellow(`  [${env}]    ${utils.inspect(data)}`));
+    console.log(chalk.yellow(`  [${env}]    ----------------\n`));
     let html = `<table cellpadding="0" cellspacing="0" border="0">
           <tr><th colspan="3" style="border: 1px #fff solid;border-bottom: none;"> Working Modules</th></tr>
           <tr>
@@ -72,6 +72,7 @@ function fileTemplate(data) {
 
 fs.writeFile('index.js', "console.warn('DO NOT code in this file')");
 fs.writeFile('index.html', fileTemplate(getEntry()));
+
 
 function getEntry() {
     let entries = {};
@@ -125,7 +126,7 @@ function getTemplate(plugins) {
                 // https://github.com/kangax/html-minifier#options-quick-reference
             };
             options.chunks = ['manifest', 'vendor', `${name}`]
-            options.inject = 'inject' in project.build?project.build.inject:true;
+            options.inject = 'inject' in project.build ? project.build.inject : true;
             options.filename = `${project.build['html-template-path']}/${name}.html`;
 
 
@@ -151,5 +152,4 @@ exports.getEntry = getEntry;
 exports.getTemplate = getTemplate;
 exports.build = project.build;
 exports.dev = project.dev;
-exports.entry = entry;
 

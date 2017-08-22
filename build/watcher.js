@@ -1,16 +1,16 @@
 var Watcher = (function() {
     var clientList = {};
-    var listen,
-        trigger,
-        remove;
-    listen = function(key, fn) {
+    var $on,
+        $emit,
+        $remove;
+    $on = function(key, fn) {
         if (!clientList[key]) {
             clientList[key] = [];
         }
         clientList[key].push(fn);
     };
 
-    trigger = function() {
+    $emit = function() {
         var key = [].shift.call(arguments);
         var fns = clientList[key];
 
@@ -24,7 +24,7 @@ var Watcher = (function() {
     };
 
 
-    remove = function(key, fn) {
+    $remove = function(key, fn) {
         var fns = clientList[key];
 
         // key对应的消息么有被人订阅
@@ -49,9 +49,9 @@ var Watcher = (function() {
     };
 
     return {
-        listen: listen,
-        trigger: trigger,
-        remove: remove
+        $on: $on,
+        $emit: $emit,
+        $remove: $remove
     }
 }());
 module.exports=Watcher;

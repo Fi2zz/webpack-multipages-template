@@ -1,11 +1,16 @@
 const path = require('path')
 const app = require('./loader');
+
+
 const build = app.build, dev = app.dev;
-const entry = app.getEntry();
+
+
 let env = process.env.NODE_ENV;
 if (!env) {
     env = 'development'
 }
+
+
 let proxyTable = dev.proxy !== false ? {
     '/api': {
         target: dev.proxy,
@@ -16,9 +21,8 @@ let proxyTable = dev.proxy !== false ? {
     }
 } : {};
 
-
 module.exports = {
-    entry: entry,
+    entry: app.getEntry(),
     template: app.getTemplate,
     build: {
         env: require('./prod.env'),
@@ -27,6 +31,8 @@ module.exports = {
         assetsSubDirectory: build.sub,
         assetsPublicPath: build.publicPath,
         productionSourceMap: false,
+        hash: !!build.hash,
+        clean: !!build.clean
     },
     dev: {
         env: require('./dev.env'),
@@ -36,6 +42,6 @@ module.exports = {
         assetsPublicPath: '/',
         proxyTable: proxyTable,
         cssSourceMap: false,
-        autoCompile: 'autoCompile' in dev ? dev.autoCompile : false
+        autoBuild: !!dev.autoBuild
     }
 };

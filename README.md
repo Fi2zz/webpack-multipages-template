@@ -19,20 +19,23 @@
     sub                   资源子目录
     "html-template-path"  打包html的存放路径
     inject                是否将打包时将资源路径注入到html文件，默认为true配置和 html-webpack-plugin一致  
+    clean					 	打包前是否重清除上一次打包的资源[Boolean]
+    hash						打包文件名是否添加hash串[Boolean] 
+    
 
  ` dev ` 
     
     port                  devSever的端口
     proxy                 devServer proxy table的url
-    autoOpenBrowser       自动打开浏览器
-    autoCompile           自动打包
+    autoOpenBrowser       自动打开浏览器[Boolean]
+    autoBuild             开发期间自动打包[Boolean]
     
  ` module `  
     
-    moduleName            模块名称
-      enable              启用模块
-      path                模块所在目录
-      page/pages          模块页面名称
+    moduleName            模块名称[String]
+      enable              启用模块 [Boolean]
+      path                模块所在目录 [String]
+      page/pages          模块页面名称 [String,Array]
       
 
 

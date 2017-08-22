@@ -5,24 +5,22 @@
     "asset": "./",
     "sub": "",
     "html-template-path": "../test/template",
-    "inject": false
+    "inject": true,
+    "hash": false,
+    "clean": false
   },
   "dev": {
     "port": 8081,
     "proxy": "http://120.24.253.124",
     "autoOpenBrowser": false,
-    "autoCompile": false
+    "autoCompile": true,
+    "autoBuild": true
   },
   "module": {
     "home": {
       "enable": true,
       "path": "./src/pages/home/",
       "page": "home"
-    },
-    "pageName01": {
-      "enable": false,
-      "path": "entry/file/path",
-      "page": "pageName"
     },
     "pageName02": {
       "enable": false,
