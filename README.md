@@ -3,6 +3,10 @@
 
 本模板基于Vue webpack-template 
 
+适用于Vue项目和非Vue项目
+
+本模板默认css预处理为stylus
+
 项目根目录下不要建 index.html和index.js。这两个文件将由Node.js自动生成
 
 
