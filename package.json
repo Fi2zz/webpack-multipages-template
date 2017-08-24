@@ -1,7 +1,7 @@
 {
-  "name": "assets",
+  "name": "webpack-multi-pages-template",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "webpack multi pages template",
   "author": "Fi2zz <fi2zz@outlook.com>",
   "private": true,
   "scripts": {
