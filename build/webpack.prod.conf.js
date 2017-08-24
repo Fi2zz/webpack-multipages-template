@@ -22,11 +22,7 @@ let plugins = [
             sourceMap: false
         }),
         new ExtractTextPlugin({
-            filename:
-
-                utils.assetsPath(`css/[name]${config.build.hash ? '.[contenthash]' : ''}.css`)
-
-            // utils.assetsPath('css/[name].[contenthash].css')
+            filename: utils.assetsPath(`css/[name]${config.build.hash ? '.[contenthash]' : ''}.css`)
         }),
         new OptimizeCSSPlugin({
             cssProcessorOptions: {

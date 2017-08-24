@@ -1,34 +1,43 @@
 {
   "build": {
-    "target": "../test/static/build",
-    "publicPath": "/build/",
+    "target": "../static",
+    "publicPath": "/",
     "asset": "./",
     "sub": "",
-    "html-template-path": "../test/template",
-    "inject": true,
+    "html-template-path": "../template",
+    "inject": false,
     "hash": false,
     "clean": false
   },
   "dev": {
     "port": 8081,
-    "proxy": "http://120.24.253.124",
+    "proxy": false,
     "autoOpenBrowser": false,
-    "autoCompile": true,
     "autoBuild": true
   },
   "module": {
-    "home": {
+    "page": {
       "enable": true,
-      "path": "./src/pages/home/",
-      "page": "home"
-    },
-    "pageName02": {
-      "enable": false,
-      "path": "entry/file/path",
+      "path": "./src/pages/page",
       "pages": [
-        "pageName01",
-        "pageName02"
-      ]
+        "home"
+      ],
+      "category": "page"
+    },
+    "moduleName0":{
+      "enable":false,
+      "path":"module/entry/file/path",
+      "pages":["module-page-01","module-page-02"],
+    },
+    "moduleName":{
+      "enable":true,
+      "path":"module/entry/file/path",
+      "page":"your-module-page-name",
+      "category":"your-module-category"
     }
+  
+
+
+
   }
 }

@@ -1,7 +1,5 @@
 const path = require('path')
-const app = require('./loader');
-
-
+const app = require('../webpack.multi.pages.generator');
 const build = app.build, dev = app.dev;
 
 
@@ -22,8 +20,8 @@ let proxyTable = dev.proxy !== false ? {
 } : {};
 
 module.exports = {
-    entry: app.getEntry(),
-    template: app.getTemplate,
+    entry: app.entry,
+    template: app.template,
     build: {
         env: require('./prod.env'),
         // index: path.resolve(__dirname, '../dist/index.html'),
