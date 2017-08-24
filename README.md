@@ -18,9 +18,9 @@
     asset                 		资源路径
     sub                   		资源子目录
     "html-template-path"  		打包html的存放路径   
-    inject                		自动注入，和html-webpack-plugin配置一致
-    clean							清除上一次打包的文件
-    hash							文件名添加hash串    
+    inject                		自动注入
+    clean						清除上一次打包的文件
+    hash						文件名添加hash串    
 
  ` dev ` 
     
@@ -35,7 +35,7 @@
       enable              		启用模块 [Boolean]
       path                		模块所在目录 [String]
       page/pages          		模块页面名称 [String,Array]
-      category					模块所属类别，打包时将创建类别目录
+      category				模块所属类别，打包时将创建类别目录
       
       如：pageA.category ="page-a" => template/path/page-a/pageName.html	 
       	
