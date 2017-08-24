@@ -13,29 +13,32 @@
 
  ` build `
  
-    target                打包文件发布目录
-    publicPath            资源公共路径
-    asset                 资源路径
-    sub                   资源子目录
-    "html-template-path"  打包html的存放路径
-    inject                是否将打包时将资源路径注入到html文件，默认为true配置和 html-webpack-plugin一致  
-    clean					 	打包前是否重清除上一次打包的资源[Boolean]
-    hash						打包文件名是否添加hash串[Boolean] 
-    
+	target                		打包文件发布目录
+    publicPath            		资源公共路径
+    asset                 		资源路径
+    sub                   		资源子目录
+    "html-template-path"  		打包html的存放路径   
+    inject                		自动注入，和html-webpack-plugin配置一致
+    clean							清除上一次打包的文件
+    hash							文件名添加hash串    
 
  ` dev ` 
     
-    port                  devSever的端口
-    proxy                 devServer proxy table的url
-    autoOpenBrowser       自动打开浏览器[Boolean]
-    autoBuild             开发期间自动打包[Boolean]
+    port                  		devSever的端口
+    proxy                 		devServer proxy table的url
+    autoOpenBrowser       		自动打开浏览器[Boolean]
+    autoBuild             		开发期间自动打包[Boolean]
     
  ` module `  
     
-    moduleName            模块名称[String]
-      enable              启用模块 [Boolean]
-      path                模块所在目录 [String]
-      page/pages          模块页面名称 [String,Array]
+    moduleName            		模块名称[String]
+      enable              		启用模块 [Boolean]
+      path                		模块所在目录 [String]
+      page/pages          		模块页面名称 [String,Array]
+      category					模块所属类别，打包时将创建类别目录
+      
+      如：pageA.category ="page-a" => template/path/page-a/pageName.html	 
+      	
       
 
 
