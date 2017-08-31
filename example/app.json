@@ -1,0 +1,34 @@
+{
+  "build": {
+    "target": "./dist/assets",
+    "publicPath": "/",
+    "asset": "./",
+    "sub": "",
+    "html-template-path": "./dist/template",
+    "inject": false,
+    "hash": false,
+    "clean": false
+  },
+  "dev": {
+    "port": 8081,
+    "proxy": false,
+    "autoOpenBrowser": false,
+    "autoBuild": true
+  },
+  "module": {
+    "multi-pages": {
+      "enable": true,
+      "path": "./src/multi-page",
+      "pages": [
+        "home",
+        "about"
+      ],
+      "category": "multiPage"
+    },
+    "single-page": {
+      "enable": true,
+      "path": "./src/single-page",
+      "page": "page-name-you-want"
+    }
+  }
+}

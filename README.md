@@ -9,6 +9,11 @@
 
 项目根目录下不要建 index.html和index.js。这两个文件将由Node.js自动生成
 
+源码目录结构随意，页面入口文件名称和html模板名称必须是index，即index.js和index.html
+
+
+
+
 
 
 
