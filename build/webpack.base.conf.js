@@ -8,12 +8,6 @@ function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
-function backend(dir) {
-
-  return path.join(process.cwd(), '..', dir)
-
-}
-
 
 module.exports = {
   entry: config.entry,
@@ -28,8 +22,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
-      '@phoenix': backend('priv/static/js/') + 'phoenix.js',
+      '@': resolve('src'),      
     }
   },
   module: {
