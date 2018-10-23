@@ -1,3 +1,6 @@
+# [DEPRECATED] 原理已了解，所以此项目废弃
+
+
 
 # app.json 
 
